@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*header*/
+header, header.masterhead{
+	background: url(../img/capa.jpg) no-repeat;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+div#cabecalho.margemHeader{
+	margin-bottom: 0 !important;
+}
+img#logo{
+	max-width: 100% !important;
+	min-width: 200px !important;
+	margin: 0 auto;
+}
+
+/*menu*/
+nav ul.menu{
+	margin: 0 auto;
+}
+nav ul.menu li.item-menu{
+	padding: 0 !important;
+	margin-left: 0;
+	margin-right: 15px;
+	width: 80px;
+	font-size: 1.3em;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 17px;
+}
+
+nav ul.menu li.item-menu a{
+	color: #9c9c9c;
+}
+nav ul.menu li.item-menu a:hover, nav ul.menu li.item-menu a:focus, nav ul.menu li.item-menu a.ativo{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+/*chamada*/
+div#caption-chamada > h2{
+	color: #ffffff;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+div#caption-chamada > h2{
+	font-weight: normal;
+	font-size: 2em;
+	line-height: 135%;
+}
+div#chamada h2.titulo-chamada{
+	font-weight: bold;
+	font-size: 3em;
+}
+div#chamada p.texto-chamada{
+	color: #BED2DA;
+}
+
+@media screen and (min-width: 992px){
+	.float-right-md{
+		float: right;
+	}
+}
+@media screen and (max-width: 991px){
+	nav ul.menu{
+		width: 490px;
+	}
+}
+@media screen and (max-width: 767px){
+	nav ul.menu{
+		width: 414px;
+	}
+	nav ul.menu li.item-menu{
+		height: 60px;
+		background-color: rgba(0,0,0,.6);
+		margin-right: 0;
+		font-size: 1em;
+	}
+	nav ul.menu li.item-menu span{
+		margin:11px 31px 10px;
+	}
+}
+@media screen and (max-width: 479px){
+	nav{
+		padding-left: 5px !important;
+		padding-right: 5px !important;
+	}
+	nav ul.menu{
+		width: 100%;
+		
+	}
+	nav ul.menu li.item-menu{
+		width: 18.9%;
+		background-color: rgba(0,0,0,.6);
+		margin: 0;
+		font-size: .8em;
+		max-height: 44px;
+	}
+	nav ul.menu li.item-menu span{
+		display: block;
+		margin: 7px auto 5px;
+	}
+}
+

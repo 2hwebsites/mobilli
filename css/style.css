@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* CSS Document */
+/*Reset*/
+*:focus{ 
+	box-shadow:0 0 0 0 !important; 
+	outline:0 !important; 
+}
+
+/*Elementos*/
+body{
+	background-color: #FFFFFF;
+	font-family: Roboto, "sans-serif", Arial;
+}
+a, a:hover, a:active, a:focus{
+	text-decoration: none;
+}
+h5 { 
+	font-weight: bold; 
+	font-style: normal;
+	font-size: 1em; 
+	line-height: 1.2em; 
+	color:#24282B; 
+}
+p{
+	font-family: Arial, "sans-serif";
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1em;
+	line-height: 150%;
+	color: #9B9B9B;
+	margin: 0;
+}
+
+/*Classes*/
+.last{
+	margin-right: 0px !important;
+}
+.float-right{
+	float: right;
+}
+.sem-borda{
+	border: none;
+}
+.mb10{
+	margin-bottom: 10% !important;
+}
+.thumbnail{
+	padding: 0;
+}
+.thumbnail h2, .thumbnail p{
+	margin: 0 10px 10px;
+	overflow: hidden;
+}
+.mt30{
+	margin-top: 30px;
+}
+.titulo-sessao{
+	margin: 0 !important;
+	padding: 50px 0;
+}
+.titulo-sessao h2{
+	margin: 0 !important;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 38px;
+	line-height: 42px;
+	color: #27282C
+}
+.titulo-sessao > p, .titulo-sessao div > p{
+	margin: 20px 100px 0;
+}
+.titulo-sessao-inverse{
+	background-color: #27282C;
+}
+.titulo-sessao-inverse h2{
+	color: #FFFFFF !important;
+}
+.img-circle{
+	-webkit-transition: border-radius .8s;
+	transition: border-radius .8s;
+}
+#empresa ul{
+	list-style-type: none !important;
+	list-style-image: url("../img/marcador_cinza.jpg") !important;
+}

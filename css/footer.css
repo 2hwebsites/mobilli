@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+footer{
+	background: url(../img/capa.jpg) no-repeat;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	padding-top: 40px;
+}
+footer p{
+	color: #ffffff;
+	margin-bottom: 40px;
+}
+footer img{
+	
+}
+footer a img{
+	max-width: 100%;
+	display: inline !important;
+	margin-right: 10px;
+	border-radius: 50%;
+	-webkit-transform:scale(1); /* prefixo para browsers webkit */
+    -moz-transform:scale(1); /* prefixo para browsers gecko */
+    -o-transform:scale(1); /* prefixo para opera */
+    transform:scale(1);
+}
+footer a img:hover{
+    -webkit-transform:scale(1.3) translate(0, -10px); /* prefixo para browsers webkit */
+    -moz-transform:scale(1.3) translate(0, -10px); /* prefixo para browsers gecko */
+    -o-transform:scale(1.3) translate(0, -10px); /* prefixo para opera */
+    transform:scale(1.3) translate(0, -10px);
+	box-shadow: 5px 5px 5px rgba(36, 40, 43, .7);
+}
+
