@@ -1,21 +1,14 @@
 // Funções para montar o header da página inicial, ajustar responsividade e animar elementos
 
 // Declara as variáveis globais
-var top_Janela = $(window).scrollTop();
-var altura_Janela = $(window).height();
-var botttom_Janela = top_Janela + altura_Janela;
-var top_tit_ativ_p = $("titulo-atividade").offset().top;
-var bp_anima_atividade = top_tit_ativ_p.top + $("titulo-atividade p").height();
+var altura_janela = $(window).height();
 
 // Chama as funções ao carregar a página
 $(document).ready(function() {
     "use strict";
 	
 	monta_header();
-	
-	if(botttom_Janela > bp_anima_atividade){
-		alert("dispara");
-	}
+		
 });
 
 window.onresize = monta_header;
@@ -59,15 +52,15 @@ function monta_header(){
 		var margem_caption_chamada = (altura_chamada - altura_texto_chamada) / 2;
 		// Calcula e adiciona a margem de baixo do cabeçalho
 		var soma_alturas = (margem_top_cabecalho + altura_cabecalho + altura_chamada);
-		var margem_bottom_cabecalho = altura_Janela - soma_alturas - 10; // 10px de margem bottom do header
+		var margem_bottom_cabecalho = altura_janela - soma_alturas - 10; // 10px de margem bottom do header
 		// Determina altura mínima do header
 		var altura_min_header = soma_alturas + 60;
 		
 		// Seta a imagem de capa com a altura da tela ou a altura máxima ou a altura mínima
-		if(altura_Janela < altura_max_header && altura_Janela > altura_min_header){
-			$(".masterhead").outerHeight(altura_Janela);
+		if(altura_janela < altura_max_header && altura_janela > altura_min_header){
+			$(".masterhead").outerHeight(altura_janela);
 		} else{
-			if(altura_Janela > altura_max_header){
+			if(altura_janela > altura_max_header){
 				$(".masterhead").outerHeight(altura_max_header);
 			} else{
 				$(".masterhead").outerHeight(altura_min_header);

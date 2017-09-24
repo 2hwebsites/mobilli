@@ -38,7 +38,7 @@
 	</div>
 <?php if(empty($_SESSION['pagina']) || $_SESSION['pagina'] == "nav/home"){ ?>	
 	<div id="chamada" class="row hidden-sm hidden-xs">
-		<figure class="col-md-6">
+		<figure class="col-md-5 col-md-offset-1">
 			<img id="img-chamada" class="img-responsive float-right" src="img/chamada.jpg" alt="Trânsito Seguro" title="Trânsito Seguro" />
 		</figure>
 
