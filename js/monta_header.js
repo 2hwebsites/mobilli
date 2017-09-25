@@ -89,4 +89,7 @@ function monta_header(){
 		var altura_header = $("#cabecalho").height() + (margem_top_cabecalho * 2);
 		$(".masterhead").outerHeight(altura_header);
 	}
+	
+	//$(".masterhead").css({"position":"fixed"});
+//	$(".masterhead").css({"top":"0"});
 }
