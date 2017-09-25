@@ -1,4 +1,4 @@
-// Animação do título da sessão Projetos da Home
+// Animação da página inicial
 $(document).ready(function() {
     "use strict";
 	$(window).scrollTop(0);
