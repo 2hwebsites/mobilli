@@ -13,7 +13,7 @@ if($totalClientes == '0'){
 	echo "Não há clientes cadastrados.";
 }else{
 ?>
-<section id="clientes" class="container-fluid">
+<section id="clientes" class="container-fluid last-session">
 	<div class="row">
 		<hgroup class="col-xs-12 text-center titulo-sessao">
 			<h2>CLIENTES E</h2>

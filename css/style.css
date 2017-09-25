@@ -38,6 +38,9 @@ p{
 .last{
 	margin-right: 0px !important;
 }
+.last-session{
+	padding-bottom: 20px;
+}
 .float-right{
 	float: right;
 }

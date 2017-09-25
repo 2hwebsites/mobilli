@@ -1,4 +1,4 @@
-<section id="empresa" class="container-fluid">
+<section id="empresa" class="container-fluid last-session">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 text-center titulo-sessao">
