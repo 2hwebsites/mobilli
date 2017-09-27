@@ -2,105 +2,136 @@
 /* CSS Document */
 
 /*header*/
-header, header.masterhead{
+header{
 	background: url(../img/capa.jpg) no-repeat;
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
-div#cabecalho.margemHeader{
-	margin-bottom: 0 !important;
+/*cabeçalho*/
+div#cabecalho{
+	margin-top: 20px;
 }
-img#logo{
+div#cabecalho.margemHeader{
+	padding-bottom: 30px;
+}
+
+/*logotipo*/
+figure img#logo{
 	max-width: 100% !important;
 	min-width: 200px !important;
 	margin: 0 auto;
 }
 
 /*menu*/
-nav ul.menu{
-	margin: 0 auto;
+nav{
+	padding-left: 0 !important;
+	padding-right: 0 !important;
 }
-nav ul.menu li.item-menu{
-	padding: 0 !important;
-	margin-left: 0;
-	margin-right: 15px;
-	width: 80px;
+nav.navbar-right{
+	margin-right: 0;
+}
+nav.navbar{
+	margin-bottom: 0;
+}
+div#menu.navbar-collapse{
+	padding-left: 0;
+	padding-right: 0;
+	margin-right: 5%;
+}
+ul.nav > li > a:focus, ul.nav > li > a:hover{
+	background-color: transparent;
+	color: #ffffff;
+}
+ul.nav li.open > a, ul.nav li.open > a:focus, ul.nav li.open > a:hover{
+	background-color: #1088A0;
+}
+a.nav-link{
+	font-family: Roboto, "sans-serif", Arial;
 	font-size: 1.3em;
-	font-weight: normal;
 	font-style: normal;
-	line-height: 17px;
-}
-
-nav ul.menu li.item-menu a{
+	font-weight: normal;
 	color: #9c9c9c;
 }
-nav ul.menu li.item-menu a:hover, nav ul.menu li.item-menu a:focus, nav ul.menu li.item-menu a.ativo{
-	color: #FFFFFF;
-	text-decoration: none;
+span.caret{
+	margin-left: 5px;
+	border-top: 5px dashed;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+}
+ul.dropdown-menu > li > a{
+	font-family: Roboto, "sans-serif", Arial;
+	font-size: 1.1em;
+	font-style: normal;
+	font-weight: normal;
+	color: #9c9c9c;
+}
+ul.dropdown-menu > li > a:focus, ul.dropdown-menu > li > a:hover{
+	color: #ffffff;
+    background-color: #1088A0;
+}
+button.navbar-toggle{
+	background-color: #1088A0;
+	border-color: #ffffff;
+	float: left;
+	margin-left: 15px;
+	margin-right: 0;
+}
+button.navbar-toggle span.icon-bar{
+	background-color: #ffffff;
 }
 
 /*chamada*/
-div#caption-chamada > h2{
+div#chamada{
+	margin-bottom: 10px;
+}
+div#caption-chamada h2{
 	color: #ffffff;
 	margin-top: 0;
 	margin-bottom: 0;
-}
-div#caption-chamada > h2{
 	font-weight: normal;
 	font-size: 2em;
 	line-height: 135%;
 }
-div#chamada h2.titulo-chamada{
+div#chamada h2 strong{
 	font-weight: bold;
-	font-size: 3em;
+	font-size: 1.5em;
 }
 div#chamada p.texto-chamada{
 	color: #BED2DA;
+	margin-right: 2%;
 }
 
-@media screen and (min-width: 992px){
-	.float-right-md{
-		float: right;
-	}
-}
+/*media queries*/
 @media screen and (max-width: 991px){
-	nav ul.menu{
-		width: 490px;
+	/*cabeçalho*/
+	div#cabecalho, div#cabecalho.margemHeader{
+		margin-bottom: 0;
+		padding-bottom: 0;
 	}
-}
-@media screen and (max-width: 767px){
-	nav ul.menu{
-		width: 414px;
+
+	/*menu*/
+	nav.navbar{
+		margin-top: 20px;
+		margin-bottom: 20px;
 	}
-	nav ul.menu li.item-menu{
-		height: 60px;
-		background-color: rgba(0,0,0,.6);
+	div#menu.navbar-collapse{
 		margin-right: 0;
-		font-size: 1em;
-	}
-	nav ul.menu li.item-menu span{
-		margin:11px 31px 10px;
-	}
-}
-@media screen and (max-width: 479px){
-	nav{
-		padding-left: 5px !important;
-		padding-right: 5px !important;
-	}
-	nav ul.menu{
-		width: 100%;
-		
-	}
-	nav ul.menu li.item-menu{
-		width: 18.9%;
-		background-color: rgba(0,0,0,.6);
-		margin: 0;
-		font-size: .8em;
-		max-height: 44px;
-	}
-	nav ul.menu li.item-menu span{
-		display: block;
-		margin: 7px auto 5px;
 	}
 }
 
+@media screen and (max-width: 767px){
+	/*menu*/
+	nav.navbar{
+		margin-bottom: 0;
+	}
+	div#menu.navbar-collapse{
+		margin-right: 0;
+		background-color: #24282B;
+	}
+	ul.navbar-nav{
+		margin: 7.5px 0;
+	}
+	ul.dropdown-menu > li > a{
+		color: #ffffff;
+	}
+}

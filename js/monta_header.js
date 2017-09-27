@@ -6,90 +6,69 @@ var altura_janela = $(window).height();
 // Chama as funções ao carregar a página
 $(document).ready(function() {
     "use strict";
-	
 	monta_header();
-		
 });
 
-window.onresize = monta_header;
-
+$(window).resize(function(){
+	"use strict";
+	monta_header();
+});
+$("button.navbar-toggle").click(function(){
+	"use strict";
+	monta_header();
+});
+	
 // Monta o header e ajusta a responsividade
 function monta_header(){
 	'use strict';
 	
-	var margem_top_menu;
+	$(".navbar").css({ "margin-top":"0px" });
+	$("#cabecalho").css({ "margin-bottom":"0px" });
 	
-	// Obtém largura da tela
-	var windowWidth = window.innerWidth;
+	var altura_cabecalho;
+	var altura_chamada;
 	
-	// Obtém largura da imagem de capa
-	var largura_header = $(".masterhead").width();
-	// Determina valor do margem top do cabeçalho
-	var margem_top_cabecalho = (largura_header * 1.575) / 100;
-
-	// Determina a margin-top do cabeçalho
-	$("#cabecalho").css({ "margin-top": + margem_top_cabecalho + "px" });
-	
-	// Determina a margem top do menu
-	var altura_cabecalho = $("#logo").height();
-	var altura_menu = $("#menu").height();
-	if(windowWidth > 767){
-		
-		margem_top_menu = (altura_cabecalho - altura_menu) / 2;
-		
-	} else{
-		margem_top_menu = altura_cabecalho / 2;
-	}
-	$("#menu").css({ "margin-top": + margem_top_menu + "px" });
+	var windowWidth = window.innerWidth;	// Obtém largura da tela
 	
 	// Realiza os ajustes apenas se a largura da tela for maior que 991px
 	if(windowWidth > 991){
-		// Determina altura máxima do header em 62% da largura
-		var altura_max_header = windowWidth * 62 / 100;
-		
-		var altura_chamada = $("#chamada").height();
+		$("#menu").css({"margin-right":"5%"});
+		//Inicializa variáveis
+		altura_cabecalho = $("#cabecalho").height();	// Obtém o tamanho do cabeçalho
+		altura_chamada = $("#chamada").height();	// Obtém altura da chamada
+		var margem_bottom_cabecalho = altura_janela - (altura_cabecalho + altura_chamada + 30);
+		var altura_menu = $("#menu").height();	// Obtém a altura do menu
+		var margem_top_menu = ($("#logo").height() - altura_menu) / 2;	//Determina margini-top do menu
 		var altura_texto_chamada = $("#caption-chamada").height();
 		var margem_caption_chamada = (altura_chamada - altura_texto_chamada) / 2;
-		// Calcula e adiciona a margem de baixo do cabeçalho
-		var soma_alturas = (margem_top_cabecalho + altura_cabecalho + altura_chamada);
-		var margem_bottom_cabecalho = altura_janela - soma_alturas - 10; // 10px de margem bottom do header
-		// Determina altura mínima do header
-		var altura_min_header = soma_alturas + 60;
+	
+		// Determina a altura do header que será igual a altura da tela
+		$(".masterhead").outerHeight(altura_janela);
 		
-		// Seta a imagem de capa com a altura da tela ou a altura máxima ou a altura mínima
-		if(altura_janela < altura_max_header && altura_janela > altura_min_header){
-			$(".masterhead").outerHeight(altura_janela);
-		} else{
-			if(altura_janela > altura_max_header){
-				$(".masterhead").outerHeight(altura_max_header);
-			} else{
-				$(".masterhead").outerHeight(altura_min_header);
-			}
-		}
-
-		// Centraliza o texto da chamada de acordo com a imagem da chamada
-		$("#caption-chamada").css({ "margin-top": + margem_caption_chamada + "px" });
-		
-		//Determina a margem bottom do cabeçalho
-		if(margem_bottom_cabecalho < 50){
-			margem_bottom_cabecalho = 50;
-		} else if((soma_alturas + margem_bottom_cabecalho + 10) > altura_max_header){
-			margem_bottom_cabecalho = altura_max_header - soma_alturas - 10;
-		}
+		//Determina o margin-bottom do cabeçalho
 		$("#cabecalho").css({ "margin-bottom": + margem_bottom_cabecalho + "px" });
 		
-		// Ajusta a altura do header caso a altura da tela seja menor que o header
-		altura_chamada = (margem_top_cabecalho + altura_cabecalho + 60);
-	
-	} else{
-		// Em tablets e celulares a margem bottom do cabeçalho será igual a margem top
-		$("#cabecalho").css({ "margin-bottom": + margem_top_cabecalho + "px" });
+		// Centraliza verticalmente o menu em relação ao logo
+		$(".navbar").css({ "margin-top": + margem_top_menu + "px" });
 		
-		// Determina altura do header
-		var altura_header = $("#cabecalho").height() + (margem_top_cabecalho * 2);
+		// Centraliza o texto da chamada de acordo com a imagem da chamada
+		$("#caption-chamada").css({ "margin-top": + margem_caption_chamada + "px" });
+	} else{
+		if(windowWidth > 767){
+			var largura_navbar = $(".navbar").width();
+			var largura_menu = $("#menu").width();
+			var margem_right_menu = (largura_navbar - largura_menu) / 2;
+			$("#menu").css({"margin-right": + margem_right_menu + "px"});
+		} else{
+			$("#menu").css({"margin-right":"0px"});
+		}
+		//Determina o margin-top do menu
+		$(".navbar").css({ "margin-top": + ($("#logo").height() / 3) + "px" });
+		
+		altura_cabecalho = $("#cabecalho").outerHeight();	// Obtém o tamanho do cabeçalho
+		var altura_header = altura_cabecalho + 20;
+		
+		// Determina a altura do header que será igual a altura da tela
 		$(".masterhead").outerHeight(altura_header);
 	}
-	
-	//$(".masterhead").css({"position":"fixed"});
-//	$(".masterhead").css({"top":"0"});
 }
